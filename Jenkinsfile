@@ -20,16 +20,7 @@ pipeline {
             }
         }
 
-        stage ('Package Stage') {
-
-            steps {
-                withMaven(maven : 'My Maven') {
-                    sh 'mvn package'
-                }
-            }
-        }
-
-        stage ('Deployment Stage') {
+       stage ('Deployment Stage') {
             steps {
                 withMaven(maven :'My Maven') {
                     sh 'mvn install'
