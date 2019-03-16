@@ -19,6 +19,15 @@ pipeline {
                 }
             }
         }
+        
+        stage ('Packaging Stage') {
+
+            steps {
+                withMaven(maven : 'My Maven') {
+                    sh 'mvn package'
+                }
+            }
+        }
 
        stage ('Deployment Stage') {
             steps {
